@@ -1,12 +1,21 @@
 from time import time
 
 def read_file(filename):
-    f = open(filename, 'r')
+    f = open("../test/" + filename, 'r')
 
+    lines = f.readlines()
+    for i in range(len(lines)):
+        temp_string = lines[i]
+        result_string = ""
+        for j in range(len(temp_string)):
+            if (temp_string[j] != "\n"):
+                result_string += temp_string[j]
+        lines[i] = result_string
 
-def main():
-    tc = input("Masukkan test case: ")
-    read_file(tc)
+    f.close()
+    return lines
+
 
 if __name__ == "__main__":
-    main()
+    filename = input("Masukkan test case: ")
+    input_file = read_file(filename)
