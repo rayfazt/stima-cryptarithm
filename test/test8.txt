@@ -1,5 +1,4 @@
-CLOCK
-TICK
-TOCK+
+COCA
+COLA+
 ------
-PLANET
+OASIS
