@@ -36,8 +36,7 @@ def unique_char(list_string):
 def to_integer(string, dict_sol):
     total = ''
     for char in string:
-        if char in dict_sol:
-            total += str(dict_sol[char])
+        total += str(dict_sol[char])
     return int(total)
 
 # algorithm taken from python docs (https://docs.python.org/3/library/itertools.html#itertools.permutations)
@@ -50,16 +49,16 @@ def permutations(list_num, r):
     if r > n:
         return
     index = list(range(n))
-    cycles = list(range(n, n-r, -1))
+    cycle = list(range(n, n-r, -1))
     yield tuple(pool[i] for i in index[:r])
     while n:
         for i in reversed(range(r)):
-            cycles[i] -= 1
-            if cycles[i] == 0:
+            cycle[i] -= 1
+            if cycle[i] == 0:
                 index[i:] = index[i+1:] + index[i:i+1]
-                cycles[i] = n - i
+                cycle[i] = n - i
             else:
-                j = cycles[i]
+                j = cycle[i]
                 index[i], index[-j] = index[-j], index[i]
                 yield tuple(pool[i] for i in index[:r])
                 break
