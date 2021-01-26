@@ -7,7 +7,7 @@ def read_file(filename):
     f.close()
     return lines
 
-# get operands and result string from problem
+# get operands and result string
 def get_op_and_res(input_file):
     op = []
     res = [input_file[-1]]
